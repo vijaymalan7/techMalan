@@ -1,0 +1,130 @@
+<!-- Mobile Menu Section -->
+{% load static %}
+<div class="popup-mobile-menu">
+    <div class="inner-wrapper">
+        <div class="inner-top">
+            <div class="content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{% static 'assets/images/logos/techMalan1.png' %}" alt="Education Logo Images"> </a>
+                </div>
+                <div class="rbt-btn-close">
+
+                    <button class="close-button rbt-round-btn">
+                        <img src="{% static 'assets/icons/x.svg' %}" alt="Facebook" class="icon">
+                    </button>
+                </div>
+            </div>
+            <!-- <p class="description">Histudy is a education website template. You can customize all.</p> -->
+            <p class="description">Bridging the gap between Transforming Talent into Technology with Innovative Solutions.</p>
+            
+            <ul class="navbar-top-left rbt-information-list justify-content-start">
+                <li>
+                    <a href="mailto:infotechmalan@gmail.com"><i class="feather-mail"></i>info@techmalan.com</a>
+                </li>
+                <li>
+                    <a href="#"><i class="feather-phone"></i>+91-8979871918</a>
+                </li>
+            </ul>
+        </div>
+
+        <nav class="mainmenu-nav">
+            <ul class="mainmenu">
+                <li class=" position-static">
+                    <a href="/">Home</a>
+                </li>
+                <!-- <li class="with-megamenu has-menu-child-item position-static">
+                    <a href="/courses.php">Courses</a>
+                </li> -->
+
+                <!-- has-dropdown -->
+                <li class="">
+                    <a href="/internships">Internships
+                        <!-- <i class="feather-chevron-down"></i> -->
+                    </a>
+                    <!-- <ul class="submenu">
+                                    <li class="has-dropdown"><a href="#">Instructor Dashboard</a>
+                                        <ul class="submenu">
+                                            <li><a href="instructor-dashboard.html">Dashboard</a></li>
+                                            <li><a href="instructor-profile.php">Profile</a></li>
+                                            <li><a href="my-courses.php">My Courses</a></li>
+                                            <li><a href="instructor-wishlist.html">Wishlist</a></li>
+                                            <li><a href="instructor-reviews.html">Reviews</a></li>
+                                            <li><a href="instructor-my-quiz-attempts.html">My Quiz Attempts</a></li>
+                                            <li><a href="instructor-order-history.html">Order History</a></li>
+                                            <li><a href="instructor-course.html">My Course</a></li>
+                                            <li><a href="instructor-announcements.html">Announcements</a></li>
+                                            <li><a href="instructor-quiz-attempts.html">Quiz Attempts</a></li>
+                                            <li><a href="instructor-assignments.html">Assignments</a></li>
+                                            <li><a href="instructor-settings.html">Settings</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown"><a href="#">Student Dashboard</a>
+                                        <ul class="submenu">
+                                            <li><a href="student-dashboard.html">Dashboard</a></li>
+                                            <li><a href="student-profile.php">Profile</a></li>
+                                            <li><a href="student-enrolled-courses.html">My Courses</a></li>
+                                            <li><a href="student-wishlist.html">Wishlist</a></li>
+                                            <li><a href="student-reviews.html">Reviews</a></li>
+                                            <li><a href="student-my-quiz-attempts.html">My Quiz Attempts</a></li>
+                                            <li><a href="student-order-history.html">Order History</a></li>
+                                            <li><a href="student-settings.html">Settings</a></li>
+                                        </ul>
+                                    </li>
+                                </ul> -->
+                </li>
+
+                <!-- <li class="with-megamenu has-menu-child-item position-static">
+                    <a href="/community.php">Community
+                        <i class="feather-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li class="with-megamenu has-menu-child-item position-static">
+                    <a href="/about.php">About</a>
+                </li> -->
+
+                <li class=" position-static">
+                    <a href="/contact-us">Contact </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-menu-bottom">
+                <div class="rbt-btn-wrapper mb--20">
+                    {% if request.user.is_authenticated %}
+                    <h6>welcome, {{request.user}} </h6><a href="/logout/"  style="color: red;">Logout</a>
+                    {% else %}
+                    <a class="rbt-btn btn-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
+                        href="/login-signup/">
+                        <span>Login/SignUp</span>
+                    </a>
+                    {% endif %}
+                </div>
+                
+            <div class="social-share-wrapper">
+                <span class="rbt-short-title d-block">Connect With Us</span>
+                <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
+                    <li><a href="https://www.facebook.com/profile.php?id=100066801796718">
+                        <img src="{% static 'assets/icons/facebook.svg' %}" alt="Facebook" class="icon">
+
+                        </a>
+                    </li>
+                    <li><a href="https://www.twitter.com">
+                        <img src="{% static 'assets/icons/linkedin.svg' %}" alt="Facebook" class="icon">
+                    </a>
+                    </li>
+                    <li><a href="https://www.instagram.com/techmalan_india/">
+                        <img src="{% static 'assets/icons/instagram.svg' %}" alt="Facebook" class="icon">
+                        </a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/company/techmalan-india-pvt-ltd/">
+                        <img src="{% static 'assets/icons/twitter.svg' %}" alt="Facebook" class="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

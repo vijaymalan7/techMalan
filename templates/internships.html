@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+{% block title %}Internship{% endblock title %}
+{% load static %}
+
+{% block body %}
+{% include "sidebar.html" %}
+
+<body class="rbt-header-sticky"><!-- End Header Area -->
+
+    <div class="rbt-page-banner-wrapper">
+        <!-- Start Banner BG Image  -->
+        <div class="rbt-banner-image"></div>
+        <!-- End Banner BG Image  -->
+        <div class="rbt-banner-content">
+            <!-- Start Banner Content Top  -->
+            <div class="rbt-banner-content-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Start Breadcrumb Area  -->
+                            <ul class="page-list">
+                                <li class="rbt-breadcrumb-item"><a href="/">Home</a></li>
+                                <li>
+                                    <div class="icon-right"><i class="feather-chevron-right"></i></div>
+                                </li>
+                                <li class="rbt-breadcrumb-item active">All Internships</li>
+                            </ul>
+                            <!-- End Breadcrumb Area  -->
+
+                            <div class=" title-wrapper">
+                                <h1 class="title mb--0">All Internships</h1>
+                                <!--<a href="#" class="rbt-badge-2">
+                                    <div class="image">🎉</div> 99 Events
+                                </a>-->
+                            </div>
+                            <p class="description">Explore opportunities through diverse internships. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Banner Content Top  -->
+        </div>
+    </div>
+    <div class="rbt-counterup-area rbt-section-overlayping-top rbt-section-gapBottom">
+        <div class="container">
+            <div class="row row--30 gy-5">
+                <div class="col-lg-12 col-xl-12 order-1 order-lg-2">
+                    <div class="row g-5 ">
+                        <!-- Start Single Event  -->
+                        {% for i in Interntype %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                           
+                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img ">
+                                    <a href="{{i.link}}">
+                                        <img alt="card"
+                                            src="{% static i.image %} ">
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>{{i.category}}</li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="{{i.link}}">{{i.title}}</a>
+                                    </h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
+                                            href="/internship-detail">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enroll Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        {% endfor %}
+                        
+                        <!-- <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img">
+                                    <a href="internship-details.php?internid=12">
+                                        <img alt="card"
+                                            src="{% static 'assets/uploads/images/internship/Marketing-&-Finance.jpg' %}"> 
+                                          
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>Marketing & Finance</li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="internship-details.php?internid=12">Marketing &
+                                            Finance 2024 H11</a></h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
+                                            href="internship-details.php?internid=12">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enroll Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img">
+                                    <a href="internship-details.php?internid=13">
+                                        <img alt="card"
+                                            src=" {% static 'assets/uploads/images/internship/Excel-&-SQL.jpg' %} "> 
+                                      
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>Excel & SQL</li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="internship-details.php?internid=13">Excel & SQL
+                                            2024 H11</a></h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
+                                            href="internship-details.php?internid=13">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enroll Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="rbt-card event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img">
+                                    <a href="internship-details.php?internid=22">
+                                        <img alt="card"
+                                            src="{% static 'assets/uploads/images/internship/Programming-Languages-(SAS-&-Python).jpg' %} "> 
+                                          
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>Programming Languages (SAS & Python)</li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="internship-details.php?internid=22">Programming
+                                            Languages (SAS & Python) 2024 H11</a></h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
+                                            href="internship-details.php?internid=22">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enroll Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="rbt-card rbt-card-gray event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img rbt-img-gray">
+                                    <a href="#">
+                                        <img alt="card" src="{% static 'assets/uploads/images/internship/AIML.jpg' %} "> 
+                                     
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>Artificial Intelligence & Machine Learning
+                                        </li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="#">Artificial Intelligence & Machine Learning
+                                            2024 H11</a></h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="#">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enrol Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="rbt-card rbt-card-gray event-grid-card variation-01 rbt-hover">
+                                <div class="rbt-card-img rbt-img-gray">
+                                    <a href="#">
+                                        <img alt="card"
+                                            src="{% static 'assets/uploads/images/internship/Programming-Languages-(SAS-&-Python).jpg' %} ">
+                                      
+                                    </a>
+                                </div>
+                                <div class="rbt-card-body">
+                                    <ul class="rbt-meta">
+                                        <li><i class="feather-map-pin"></i>Visualization Tools - Tableau & Power BI</li>
+                                    </ul>
+                                    <h4 class="rbt-card-title"><a href="#">Visualization Tools - Tableau & Power BI 2024
+                                            H11</a></h4>
+
+                                    <div class="read-more-btn">
+                                        <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round" href="#">
+                                            <span class="icon-reverse-wrapper">
+                                                <span class="btn-text">Enrol Now</span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    
+                    </div>
+
+                        
+                    <!--
+        <div class="row">
+            <div class="col-lg-12 mt--60">
+                <nav>
+                    <ul class="rbt-pagination">
+                        <li><a href="#" aria-label="Previous"><i class="feather-chevron-left"></i></a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#" aria-label="Next"><i class="feather-chevron-right"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rbt-separator-mid">
+        <div class="container">
+            <hr class="rbt-separator m-0">
+        </div>
+    </div>
+
+
+
+    {% endblock body %}

@@ -1,0 +1,966 @@
+{% extends "base.html" %}
+{% block title %}Enroll Now{% endblock title %}
+{% load static %}
+{% block body %}
+{% include "sidebar.html" %}
+<div class="rbt-page-banner-wrapper">
+    <!-- Start Banner BG Image  -->
+    <div class="rbt-banner-image"></div>
+    <!-- End Banner BG Image  -->
+    <div class="rbt-banner-content">
+        <!-- Start Banner Content Top  -->
+        <div class="rbt-banner-content-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Start Breadcrumb Area  -->
+                        <ul class="page-list">
+                            <li class="rbt-breadcrumb-item"><a href="/internships.php">Internship</a></li>
+                            <li>
+                                <div class="icon-right"><i class="feather-chevron-right"></i></div>
+                            </li>
+                            <li class="rbt-breadcrumb-item active">Enrollment</li>
+                        </ul>
+                        <!-- End Breadcrumb Area  -->
+
+                        <div class=" title-wrapper">
+                            <h1 class="title mb--0">Enroll Yourself for Programming Languages (SAS & Python) 2024 H11</h1>
+                           <!-- <a href="#" class="rbt-badge-2">
+                                <div class="image">🎉</div> 99 Events
+                            </a>-->
+                        </div>
+                        <p class="description">Unlock your potential with hands-on experience through our internship opportunities at Edulyt. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Banner Content Top  -->
+    </div>
+</div>
+
+<div class="rbt-counterup-area rbt-section-overlayping-top rbt-section-gapBottom">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8 m-auto">
+                <div class="rbt-contact-address">
+                    <div class="container">
+                        <div class="rbt-contact-form contact-form-style-1 max-width-auto">
+                            <div class="section-title text-start">
+                                <span class="subtitle bg-primary-opacity">Transforming Talent INTO TECHNOLOGY</span>
+                            </div>
+                            <h3 class="title">Enroll Yourself for Programming Languages (SAS & Python) 2024 H11</h3>
+                            <form id="contact-form" class="max-width-auto" method="POST" action="/internship-enrollment-success.php
+
+">
+                                <div class="form-group">
+                                    <input name="internshipid" type="hidden" value="22" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <input name="enrollname" type="text" value="{{request.user}}" required>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input name="enrollemail" type="email" value="{{user.email}}" required>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input class="w-100" id="phone" type="number" name="enrollcontact" placeholder="+91 234 567 7890" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter exactly 10 digits.')">
+                                        <label for="phone">Phone</label>
+                                        <span class="focus-border border-black"></span>
+                                    </div>
+
+                                    <script>
+                                        document.getElementById('phone').addEventListener('input', function(event) {
+                                            const input = event.target.value;
+                                            if (input.length != 10) {
+                                                event.target.setCustomValidity('Please enter exactly 10 digits.');
+                                            } else {
+                                                event.target.setCustomValidity('');
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <div class="course-field mb--15">
+                                    <label for="dateofbir" class="mb--10">DOB</label>
+                                    <input type="date" id="dateofbir" name="enrolldob" required>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+                                
+                                <div class="course-field mb--20">
+                                    <label for="gen" class="mb--10">Gender</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="gen" name="enrollgender" required>
+                                            <option value="" disabled selected hidden>Choose Your Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message" class="rbt-btn-link color-primary font-10">Please select your gender.</p>
+                                </div>
+                                
+                                <script>
+                                    document.getElementById('gen').addEventListener('change', function(event) {
+                                        var errorMessage = document.getElementById('error-message');
+                                        if (event.target.value) { // Hide error if a value is selected
+                                            errorMessage.style.display = 'none';
+                                        } else { // Show error if value is empty
+                                            errorMessage.style.display = 'block';
+                                        }
+                                    });
+                                </script>
+                                
+
+                                <div class="course-field mb--20">
+                                    <label for="experience" class="mb--10">Experience</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="experience" name="enrollexperience" required>
+                                            <option value="" disabled selected hidden>Choose Your Experience</option>
+                                            <option value="School Student">School Student</option>
+                                            <option value="College Student">College Student</option>
+                                            <option value="Passed Out & Unemployed">Passed Out & Unemployed</option>
+                                            <option value="0-2 Years">0-2 Years</option>
+                                            <option value="2-5 Years">2-5 Years</option>
+                                            <option value="5-10 Years">5-10 Years</option>
+                                            <option value="10+ Years">10+ Years</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-experience" class="rbt-btn-link color-primary font-10">Please choose your experience.</p>
+                                </div>
+
+                                <script>
+                                    document.getElementById('experience').addEventListener('change', function(event) {
+                                        var errorMessage = document.getElementById('error-message-experience');
+                                        if (event.target.value) { // Hide error if a value is selected
+                                            errorMessage.style.display = 'none';
+                                        } else { // Show error if value is empty
+                                            errorMessage.style.display = 'block';
+                                        }
+                                    });
+                                </script>
+                                
+                                
+                                <div class="course-field mb--20">
+                                    <label for="uni_name" class="mb--10">University Name</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="uni_name" name="enrolluniversity" required>
+                                            <option value="" disabled selected hidden>Choose Your University</option>
+                                            <option value="1">Indian Institute of Technology</option><option value="5">Amity University</option><option value="6">The Neotia University</option><option value="7">Sandip University</option><option value="8">Indian Institute of Technology (BHU)</option><option value="9">GH Raisoni College of Engineering and Management</option><option value="10">National Institute of Technology</option><option value="11">O.P. Jindal University (OPJU)</option><option value="12">Marwadi University</option><option value="13">Maharashtra National Law University</option><option value="14">Jamia Millia Islamia</option><option value="16">Pune University</option><option value="17">Cochin University of Science and Technology</option><option value="18">Central Institute of Technology</option><option value="19">Parul University</option><option value="20">Ramdeobaba University</option><option value="21">Sharda University</option><option value="22">Suresh Gyan Vihar University</option><option value="23">Indian Institute of Information Technology</option><option value="24">Guru Gobind Singh Indraprastha University</option><option value="25">Dr. A.P.J Abdul Kalam Technical University</option><option value="26">Aligarh Muslim University</option><option value="27">Rashtrasant Tukadoji Maharaj Nagpur University</option><option value="28">University of Delhi</option><option value="29">Malout Institute of Management and Information Technology</option><option value="30">Jagannath Community College (JCC)</option><option value="31">Gautam Buddha University</option><option value="32">Birla Institute of Technology - Mesra</option><option value="33">Maharishi Dayanand University</option><option value="34">Osmania University</option><option value="35">Gujarat Technological University</option><option value="36">Babasaheb Bhimrao Ambedkar University</option><option value="37">University of Lucknow</option><option value="38">Maulana Abul Kalam Azad University of Technology</option><option value="39">Anna University</option><option value="40">Krantiguru Shyamji Krishna Verma Kachchh University</option><option value="41">Vijayanagara Sri Krishnadevaraya University</option><option value="42">Rajiv Gandhi University of Knowledge Technologies (RGUKT)</option> 
+                                            <option value="others">Others</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-uni" class="rbt-btn-link color-primary font-10">Please choose your university.</p>
+                                </div>
+                                <script>
+                                    document.getElementById('uni_name').addEventListener('change', function(event) {
+                                        var errorMessage = document.getElementById('error-message-uni');
+                                        if (event.target.value) { // Hide error if a value is selected
+                                            errorMessage.style.display = 'none';
+                                        } else { // Show error if value is empty
+                                            errorMessage.style.display = 'block';
+                                        }
+                                    });
+                                </script>
+
+                                <div id="collegeDropdownContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+                            
+                                <div id="stateDropdownContainer">
+                                            <!-- State dropdown will be populated here -->
+                                </div>
+                                
+                                <div id="cityDropdownContainer">
+                                            <!-- State dropdown will be populated here -->
+                                </div>
+                                
+                                <div id="city2DropdownContainer">
+                                            <!-- State dropdown will be populated here -->
+                                </div>
+
+                            
+                                <div class="course-field mb--20">
+                                    <label for="chpa_mark_12" class="mb--10">Country</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="country" name="enrollcountry" required>
+                                            <option value="" disabled selected hidden>Choose Your Country</option>
+                                            <option value="India">India</option>
+                                            <option value="others">Others</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-country" class="rbt-btn-link color-primary font-10">Please choose your Country.</p>
+                                    <script>
+                                        document.getElementById('country').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-country');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                
+                                <div id="countryContainer">
+                                      <!-- Country will be populated here -->
+                                </div>
+
+                                
+                                <div class="course-field mb--20">
+                                    <label for="uni_name" class="mb--10">Course Name</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="course_name" name="enrollcourse" required>
+                                            <option value="" disabled selected hidden>Choose Your Course</option>
+                                            <option vlaue="BE">BE</option>
+                                            <option vlaue="BTech">B.Tech</option>
+                                            <option vlaue="Mtech">M.Tech</option>
+                                            <option vlaue="BBA">BBA</option>
+                                            <option vlaue="MBA">MBA</option>
+                                            <option vlaue="BCA">BCA</option>
+                                            <option vlaue="MCA">MCA</option>
+                                            <option vlaue="BCOM">B.COM</option>
+                                            <option vlaue="MCOM">M.COM</option>
+                                            <option vlaue="BSC">B.SC.</option>
+                                            <option vlaue="MSC">M.SC.</option>
+                                            <option vlaue="BA">BA</option>
+                                            <option vlaue="MA">MA</option>
+                                            <option vlaue="Diploma">Diploma</option>
+                                            <option value="others">Others</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-course_name" class="rbt-btn-link color-primary font-10">Please choose your Course.</p>
+                                    <script>
+                                        document.getElementById('course_name').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-course_name');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                
+                                <div id="courseContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+                                
+                                
+                                <div class="course-field mb--20">
+                                    <label for="passyr" class="mb--10">Year of Passing(Course)</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="passyr" name="enrollcoursepassing" required>
+                                            <option value="" disabled selected hidden>Choose Your Passing Year</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-passyr" class="rbt-btn-link color-primary font-10">Please choose your Passing Year.</p>
+                                    <script>
+                                        document.getElementById('passyr').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-passyr');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input class="w-100" id="linkedin" type="url" name="enrolllinkedin" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter a valid LinkedIn profile URL.')">
+                                    <label for="linkedin">LinkedIn Profile URL (Paste the Profile Link)</label>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="w-100" id="instagram" type="url" name="enrollinsta" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter a valid Instagram profile URL.')">
+                                    <label for="instagram">Instagram Profile URL (Paste the Profile Link)</label>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input class="w-100" id="email" type="email" name="enrollclgtnpemail" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter a valid email address.')">
+                                    <label for="email">Email ID of College Training and Placement Cell</label>
+                                    <span class="focus-border border-black"></span>
+                                </div>
+                                
+                                <script>
+                                    document.getElementById('linkedin').addEventListener('input', function(event) {
+                                        const input = event.target.value;
+                                        const urlPattern = /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/;
+                                        if (!urlPattern.test(input)) {
+                                            event.target.setCustomValidity('Please enter a valid LinkedIn profile URL.');
+                                        } else {
+                                            event.target.setCustomValidity('');
+                                        }
+                                    });
+
+                                    document.getElementById('instagram').addEventListener('input', function(event) {
+                                        const input = event.target.value;
+                                        const urlPattern = /^(https?:\/\/)?(www\.)?instagram\.com\/.*$/;
+                                        if (!urlPattern.test(input)) {
+                                            event.target.setCustomValidity('Please enter a valid Instagram profile URL.');
+                                        } else {
+                                            event.target.setCustomValidity('');
+                                        }
+                                    });
+                                    
+                                    document.getElementById('email').addEventListener('input', function(event) {
+                                        const input = event.target;
+                                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                        if (!emailPattern.test(input.value)) {
+                                            input.setCustomValidity('Please enter a valid email address.');
+                                        } else {
+                                            input.setCustomValidity('');
+                                        }
+                                    });
+                                </script>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input class="w-100" id="phone1" type="number" name="enrollguardiancontact" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter exactly 10 digits.')">
+                                        <label>Guardians Contact Number (WhatsApp Enabled)</label>
+                                        <span class="focus-border border-black"></span>
+                                    </div>
+
+                                    <script>
+                                        document.getElementById('phone1').addEventListener('input', function(event) {
+                                            const input = event.target.value;
+                                            if (input.length != 10) {
+                                                event.target.setCustomValidity('Please enter exactly 10 digits.');
+                                            } else {
+                                                event.target.setCustomValidity('');
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="reasonofjoin" class="mb--10">Why do you want to join this Internship Program?</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" name="enrollreason" id="reasonofjoin" required>
+                                            <option value="" disabled selected hidden>Choose Your Reason</option>
+                                            <option value="I want to learn from scratch as I am a beginner.">I want to learn from scratch as I am a beginner.</option>
+                                            <option value="I want hands on experience.">I want hands on experience.</option>
+                                            <option value="I need to enhance my resume by adding certificates and projects.">I need to enhance my resume by adding certificates and projects.</option>
+                                            <option value="I need to submit Internship certificate in my college.">I need to submit Internship certificate in my college.</option>
+                                            <option value="I want major/minor projects to submit in college.">I want major/minor projects to submit in college.</option>
+                                            <option value="I am looking for Placement Assistance.">I am looking for Placement Assistance.</option>
+                                            <option value="I want to get certified by MNC">I want to get certified by MNC</option> 
+                                            <option value="reason">Other</option> 
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-reasonofjoin" class="rbt-btn-link color-primary font-10">Please choose your Reason.</p>
+                                    <script>
+                                        document.getElementById('reasonofjoin').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-reasonofjoin');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div id="reasonContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="enrollcrname" type="text" class="w-100">
+                                    <label>CR Name</label>
+                                    <p>Class Representative Name</p>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <input class="w-100" id="phone2" type="number" name="enrollcrcontact" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter exactly 10 digits.')">
+                                        <label>CR Contact No.</label>
+                                        <p>Class Representative Phone Number</p>
+                                    </div>
+
+                               <script>
+                                        document.getElementById('phone2').addEventListener('input', function(event) {
+                                            const input = event.target.value;
+                                            if (input.length != 10) {
+                                                event.target.setCustomValidity('Please enter exactly 10 digits.');
+                                            } else {
+                                                event.target.setCustomValidity('');
+                                            }
+                                        });
+                                    </script>
+
+                                <div class="course-field mb--20">
+                                    <label for="training" class="mb--10">Do you want a formal paid training to increase your chances for job?</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="training" name="enrollpaidtraining" required>
+                                            <option value="" disabled selected hidden>Choose Your Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-training" class="rbt-btn-link color-primary font-10">Please choose Option.</p>
+                                    <script>
+                                        document.getElementById('training').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-training');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+
+                                <div class="course-field mb--20">
+                                    <label for="whatsapp_grp" class="mb--10">
+                                        Join the WhatsApp group from below link as it is MANDATORY to join the WhatsApp group for successful submission. HR/Admin will contact you in the group. Link to WhatsApp group 
+                                        <br><a target="_blank" href="https://chat.whatsapp.com/CEVtT2kESkdHbrGZfYmkMr">https://chat.whatsapp.com/CEVtT2kESkdHbrGZfYmkMr</a> <br>
+                                        Have you joined?
+                                    </label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="whatsapp_grp" name="enrolljoinwhatsapp" required>
+                                            <option value="" disabled selected hidden>Choose Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="Trouble">Having trouble joining (need help)</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-whatsapp_grp" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('whatsapp_grp').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-whatsapp_grp');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                
+                                <div class="form-group">
+                                    Internship / Training Name
+                                    <input name="enrollinterndomain" type="text" value="Programming Languages (SAS & Python)" readonly>
+                                    <span class="focus-border"></span>
+                                </div>
+                                
+                                <div class="course-field mb--20">
+                                    <label for="internship-duration" class="mb--10">Internship / Training Duration</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="internship-duration" name="enrollinternduration" required>
+                                            <option value="" disabled selected hidden>Choose Duration</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-internship-duration" class="rbt-btn-link color-primary font-10">Please Choose Duration</p>
+                                    <script>
+                                        document.getElementById('internship-duration').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-internship-duration');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="internship-type" class="mb--10">Internship/Training type 
+</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="internship-type" name="enrollinterntype" required>
+                                            <option value="" disabled selected hidden>Choose Internship Type</option>
+                                            <option value="Internship - Virtual (No classes)">Internship - Virtual (No classes)</option>
+                                            <option value="Internship - Live (Online or Offline - Both with regular classes)">Internship - Live (Online or Offline - Both with regular classes)</option>
+                                            <option value="Summer Training (Online)">Summer Training (Online)</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-internship-type" class="rbt-btn-link color-primary font-10">Please Choose Internship Type</p>
+                                    <script>
+                                        document.getElementById('internship-type').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-internship-type');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="how_to_know" class="mb--10">From where you got to know about us</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="how_to_know" name="enrollourcontact" required>
+                                            <option value="" disabled selected hidden>Choose Option</option>
+                                            <option value="College">College</option>
+                                            <option value="Friend">Friend</option>
+                                            <option value="Colleague">Colleague</option>
+                                            <option value="LinkedIn">LinkedIn</option>
+                                            <option value="Website">Website</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-how_to_know" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('how_to_know').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-how_to_know');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="enrollreferralcode">
+                                    <label>Referral Code (If any)</label>
+                                    <span class="referral_code"></span>
+                                </div>
+                                <div class="course-field mb--20">
+                                    <label for="social_grp" class="mb--10">
+                                    Follow us on social media to know more about the Internship and Job opportunities.
+                                        
+                                    <div class="social-share-wrapper mt--30 text-center">
+<div class="rbt-post-share d-flex">
+    <ul class="social-icon social-default justify-content-center">
+        <li>
+            <a target="_blank" href="https://www.whatsapp.com/channel/0029VaIBXP347XeJjHqbNi1X">
+                <img src="./assets/images/Social/wp.png" alt="WhatsApp" style="width: 30px; height: 30px;">
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://t.me/+_XxzFosKYOg2M2I9">
+                <img src="./assets/images/Social/tele.png" alt="Telegram" style="width: 30px; height: 30px;">
+            </a>
+        </li>	
+        <li>
+            <a target="_blank" href="https://www.instagram.com/edulyt_india/">
+                <img src="./assets/images/Social/insta.png" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.linkedin.com/company/edulytindia/">
+                <img src="./assets/images/Social/link.png" alt="LinkedIn" style="width: 30px; height: 30px;">
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.facebook.com/people/Edulyt-India/100066801796718/">
+                <img src="./assets/images/Social/fb.png" alt="fb" style="width: 30px; height: 30px;">
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.youtube.com/@EdulytIndia">
+                <img src="./assets/images/Social/yt.png" alt="yt" style="width: 30px; height: 30px;">
+            </a>
+        </li>
+    </ul>
+</div>
+</div>											
+                                    <!-- <br><a target="_blank" href="https://www.linkedin.com/company/edulytindia/">https://www.linkedin.com/company/edulytindia/</a>
+                                    <br><a target="_blank" href="https://instagram.com/edulyt_india">https://instagram.com/edulyt_india</a>
+                                    <br> <a target="_blank" href="https://t.me/+_XxzFosKYOg2M2I9">https://t.me/+_XxzFosKYOg2M2I9</a>
+                                    <br> <a target="_blank" href="https://whatsapp.com/channel/0029VaIBXP347XeJjHqbNi1X">https://whatsapp.com/channel/0029VaIBXP347XeJjHqbNi1X</a> -->
+                                    <br> Have you followed now?
+                                    <br> It will increase your chances of selection.
+                                    </label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="social_grp" name="enrollsocialmedia" required>
+                                            <option value="" disabled selected hidden>Choose Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="Trouble">Having trouble joining (need help)</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-social_grp" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('social_grp').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-social_grp');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="10thmarks" class="mb--10">Marks in 10th – CGPA/%</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="10thmarks" required>
+                                            <option value="" disabled selected hidden>Choose Marks Type</option>
+                                            <option value="cgpa">CGPA</option>
+                                            <option value="percentage">Percentage</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-10thmarks" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('10thmarks').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-10thmarks');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div id="10thmarksContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="12thmarks" class="mb--10">Markd in 12th - CGPA/%</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="12thmarks" required>
+                                            <option value="" disabled selected hidden>Choose Marks Type</option>
+                                            <option value="cgpa">CGPA</option>
+                                            <option value="percentage">Percentage</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-12thmarks" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('12thmarks').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-12thmarks');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div id="12thmarksContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="coursemarks" class="mb--10">Marks in Pursuing Course (till date) - CPGA/%</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="coursemarks" required>
+                                            <option value="" disabled selected hidden>Choose Marks Type</option>
+                                            <option value="cgpa">CGPA</option>
+                                            <option value="percentage">Percentage</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-coursemarks" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('coursemarks').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-coursemarks');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+
+                                <div id="coursemarksContainer">
+                                    <!-- College dropdown will be populated here -->
+                                </div>
+
+                                <div class="course-field mb--20">
+                                    <label for="market" class="mb--10">Do you want to take part in Marketing activities for the brand with some perks?</label>
+                                    <div class="rbt-modern-select bg-transparent height-45 mb--10">
+                                        <select class="w-100" id="market" name="enrollmarketactivity" required>
+                                            <option value="" disabled selected hidden>Choose Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <span class="focus-border border-black"></span>
+                                    <p id="error-message-market" class="rbt-btn-link color-primary font-10">Please Choose Option</p>
+                                    <script>
+                                        document.getElementById('market').addEventListener('change', function(event) {
+                                            var errorMessage = document.getElementById('error-message-market');
+                                            if (event.target.value) { // Hide error if a value is selected
+                                                errorMessage.style.display = 'none';
+                                            } else { // Show error if value is empty
+                                                errorMessage.style.display = 'block';
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <textarea></textarea>
+                                    <label>Message</label>
+                                    <span class="focus-border"></span>
+                                </div> -->
+
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                <script>
+                                    $(document).ready(function(){
+                                        
+                                        $('#course_name').change(function(){
+                                            var selectedOption = $(this).val();
+                                            console.log(selectedOption);
+                                            if(selectedOption != ''){
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script
+                                                    method: 'post',
+                                                    data: {course_name: selectedOption},
+                                                    success: function(response){
+                                                        $('#courseContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#courseContainer').html('<select id="course_name"><option value="">---</option></select>'); // Clear the second dropdown if no option selected
+                                            }
+                                        });
+                                        
+                                        $('#uni_name').change(function(){
+                                            var selectedOption = $(this).val();
+                                            console.log(selectedOption);
+                                            if(selectedOption != ''){
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script
+                                                    method: 'post',
+                                                    data: {university_name: selectedOption},
+                                                    success: function(response){
+                                                        $('#collegeDropdownContainer').html(response);
+                                                        $('#stateDropdownContainer').html('');
+                                                        $('#cityDropdownContainer').html('');// Clear the third dropdown if the university changes
+                                                    }
+                                                });
+                                            } else {
+                                                $('#collegeDropdownContainer').html('<select id="college_name"><option value="">---</option></select>'); // Clear the second dropdown if no option selected
+                                                $('#stateDropdownContainer').html('');
+                                                $('#cityDropdownContainer').html('');// Clear the third dropdown if no option selected
+                                            }
+                                        });
+                                        
+                                        // Event listener for the second dropdown
+                                        $(document).on('change', '#college_name', function(){
+                                            var selectedUniversity = $('#uni_name').val();
+                                            var selectedCollege = $(this).val();
+                                            console.log(selectedCollege);
+                                            if(selectedCollege != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        college_name: selectedCollege,
+                                                        uni_name : selectedUniversity
+                                                    },
+                                                    success: function(response){
+                                                        $('#stateDropdownContainer').html(response);
+                                                        $('#cityDropdownContainer').html('');
+                                                    }
+                                                });
+                                            } else {
+                                                $('#stateDropdownContainer').html(''); 
+                                                        $('#cityDropdownContainer').html('');
+                                                // Clear the third dropdown if no option selected
+                                            }
+                                        });
+                                        
+                                        $(document).on('change', '#state_name', function(){
+                                            var selectedUniversity = $('#uni_name').val();
+                                            var selectedstate = $(this).val();
+                                            console.log(selectedstate);
+                                            if(selectedstate != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        state_name: selectedstate,
+                                                        uni_name : selectedUniversity
+                                                    },
+                                                    success: function(response){
+                                                        $('#cityDropdownContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#cityDropdownContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+                                        
+                                        $(document).on('change', '#city_name', function(){
+                                            var selectedUniversity = $('#uni_name').val();
+                                            var selectedcity = $(this).val();
+                                            console.log(selectedcity);
+                                            if(selectedcity != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        city_name: selectedcity,
+                                                        uni_name : selectedUniversity
+                                                    },
+                                                    success: function(response){
+                                                        $('#city2DropdownContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#city2DropdownContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+
+                                        $(document).on('change', '#country', function(){
+                                            var selectedcountry = $(this).val();
+                                            console.log(selectedcountry);
+                                            if(selectedcountry != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        country: selectedcountry
+                                                    },
+                                                    success: function(response){
+                                                        $('#countryContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#countryContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+                                        
+                                        $(document).on('change', '#reasonofjoin', function(){
+                                            var selectedReason = $(this).val();
+                                            console.log(selectedReason);
+                                            if(selectedReason != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        reason: selectedReason
+                                                    },
+                                                    success: function(response){
+                                                        $('#reasonContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#reasonContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+
+                                        $(document).on('change', '#10thmarks', function(){
+                                            var selectedType = $(this).val();
+                                            console.log(selectedType);
+                                            if(selectedType != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        marks10th: selectedType
+                                                    },
+                                                    success: function(response){
+                                                        $('#10thmarksContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#10thmarksContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+
+                                        $(document).on('change', '#12thmarks', function(){
+                                            var selectedType = $(this).val();
+                                            console.log(selectedType);
+                                            if(selectedType != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        marks12th: selectedType
+                                                    },
+                                                    success: function(response){
+                                                        $('#12thmarksContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#12thmarksContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+
+                                        $(document).on('change', '#coursemarks', function(){
+                                            var selectedType = $(this).val();
+                                            console.log(selectedType);
+                                            if(selectedType != ''){ // Print selected college to the console
+                                                $.ajax({
+                                                    url: 'classes/internshipclass.php', // URL to your backend script for third dropdown data
+                                                    method: 'post',
+                                                    data: {
+                                                        markscourse: selectedType
+                                                    },
+                                                    success: function(response){
+                                                        $('#coursemarksContainer').html(response);
+                                                    }
+                                                });
+                                            } else {
+                                                $('#coursemarksContainer').html(''); // Clear the third dropdown if no option selected
+                                            }
+                                        });
+                                    });
+                                    
+                                    
+                                    // Get the current date
+                                    var currentDate = new Date();
+
+                                    // Set the maximum date to the last day of 2014
+                                    var maxDate = new Date(2014, 11, 31); // Months are 0-indexed
+
+                                    // Format the maximum date as YYYY-MM-DD
+                                    var formattedMaxDate = maxDate.toISOString().split('T')[0];
+
+                                    // Set the max attribute of the date input
+                                    document.getElementById('dateofbir').setAttribute('max', formattedMaxDate);
+                                </script>
+                                <div class="form-submit-group">
+                                    <button type="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse w-100" name="enrollstudent_btn">
+                                        <span class="icon-reverse-wrapper">
+                                            <span class="btn-text">Enroll Me!</span>
+                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock body %}

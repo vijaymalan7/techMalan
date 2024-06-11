@@ -1,0 +1,187 @@
+input{
+    outline: none!important;
+        font-size: 14px!important;
+    }
+    
+    .form-group p {
+    font-size:13px!important;
+    }
+    
+    label {
+    font-size: 14px;
+    }
+    .rbt-modern-select .bootstrap-select button.btn-light,
+    ::placeholder, select, option, label{
+        color: gray;
+        font-size:14px!important;
+    }
+    
+    .rbt-user-menu-list-wrapper{
+    left:-130px!important
+    }
+    
+    .successadded {
+        Position: absolute;
+        background: lightgreen;
+        color: black;
+        right: 4%;
+        top: 150px;
+        padding: 10px 15px;
+        z-index:10000;
+    }
+    
+    .failurenotadded {
+        Position: absolute;
+        background: red;
+        color: white;
+        right: 4%;
+        top: 150px;
+        padding: 10px 15px;
+        z-index:10000;
+    }
+    
+    .w-40{
+    max-width: 40%!important;
+    }
+    
+    .fleft{
+        float: left!important;
+    }
+    
+    .rbt-header .logo a img, .logo a img{
+        max-height: 100px;
+        width: 250px!important;
+        height: auto!important;
+        object-fit: cover;
+    }
+    .header-left.rbt-header-content{
+        width: 25%!important;
+    }
+    .header-right{
+        width: 30%!important;
+    }
+    
+    .mainbar-row .rbt-main-navigation {
+        flex: 1;
+        display: flex;
+        margin: 0px!important;
+        justify-content: center;
+    }
+    
+    .quick-access > li {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .rbt-header .mainmenu-nav .mainmenu li {
+        margin: 0px 10px!important;
+    }
+    ul.quick-access {
+        padding:0px 10px;
+    }
+    .rbt-header-wrapper.header-space-betwween.header-sticky {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .iti.iti--allow-dropdown {
+        margin-top: 20px!important;
+    }
+    .iti__selected-flag{
+        padding-top: 10px!important;
+    }
+    
+    #homeeventarea {
+        margin: 0px auto 0px;
+    }
+    .moreeventbut {
+        justify-items: center;
+        text-align: center;
+    }
+    .footer-payment-img{
+        text-align: end;
+    }
+    .footer-payment-img img{
+        width: 50%!important;
+    }
+    
+    /* Css For Only Mobile*/
+    @media(min-width:767px){
+        .row.g-5.row-cols-5.coursesfilter .col-lg-2 { width: 20%; }
+    }
+    
+    
+    /* Css For Only Mobile*/
+    @media(max-width:767px){
+    .rbt-header-wrapper.header-space-betwween.header-sticky .container-fluid {
+        padding: 0px!important;
+    }
+    .rbt-header .rbt-header-wrapper .header-left {
+        flex-basis: 100%;
+    }
+        
+        .rbt-user-menu-list-wrapper{
+    left:25px!important
+    }
+        
+        .popup-mobile-menu .inner-wrapper .inner-top .logo a img {
+        max-height: 62px;
+    }
+        
+        div{
+            word-wrap: break-word
+        }	
+        
+        label{
+        display:block!important;
+            word-wrap: break-word!important;
+        }
+    
+    }
+    
+    .rbt-card-gray{
+        background:lightgray;	
+    }
+    
+    .rbt-img-gray{
+        filter:grayscale(1);	
+    }
+    
+    .border-black {
+        background: black;
+    }
+    
+    .shadow-none{
+        box-shadow:none;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    .textButton {
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+        padding: 0;
+        outline: none;
+    }
+    
+    .focused{
+    color:#000!important;
+    }
+    
+    input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=date], textarea{
+    box-shadow: none!important;}
+    
+    .font-10{
+        font-size:12px;
+    }
+    
+    .rbt-header .mainmenu-nav .mainmenu li.has-dropdown .submenu-right
+    {
+        left:0;
+    }
